@@ -12,14 +12,23 @@ public class CardGame {
         for (int i = 0; i < suitList.length; i++) {
             for (int a = 0; a < symbolList.length; a++) {
 
-        Card newCard = new Card();
-        newCard.suit=suitList[i];
-        newCard.symbol=symbolList[a];
-        newCard.value=a + 2;
+                Card newCard = new Card();
+                newCard.suit=suitList[i];
+                newCard.symbol=symbolList[a];
+                newCard.value=a + 2;
 
-        deckOfCards.add(newCard);
+                deckOfCards.add(newCard);
 
             }
         }
-        System.out.println(deckOfCards);
-}}
+
+}
+    public String getDeck() {
+        String allCard = "";
+
+        for (int i = 0; i < deckOfCards.stream().count(); i++) {
+            allCard += deckOfCards.get(i).toString() + " ";
+        }
+        return allCard;
+    }
+}

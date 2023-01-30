@@ -4,5 +4,6 @@ public class Main {
 
 
         CardGame game = new CardGame ("Snap");
+        System.out.println(game.getDeck());
     }
 }
