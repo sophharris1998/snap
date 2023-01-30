@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
     public ArrayList<Card> deckOfCards = new ArrayList<Card>();
@@ -30,5 +32,20 @@ public class CardGame {
             allCard += deckOfCards.get(i).toString() + " ";
         }
         return allCard;
+    }
+
+    public Card dealCard() {
+        return deckOfCards.remove(0);
+    }
+
+    public ArrayList<Card> sortDeckInNumberOrder () {
+        Collections.sort(deckOfCards, new Comparator<Card>() {
+            @Override
+            public int compare(Card o1, Card o2) {
+                return Integer.valueOf(o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        return deckOfCards;
     }
 }

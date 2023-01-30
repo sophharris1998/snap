@@ -7,4 +7,13 @@ public class Card {
     public String toString() {
         return suit + symbol;
     }
+
+    public int getValue () {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
 }
